@@ -5,7 +5,306 @@
 <p>I'm LhopitalKuma</p>
 <img src="my-photo.jpg" alt="我的本地图片" style="width: 50%; margin-top: 20px; border-radius: 8px;">
 <p>I'm hosted with GitHub Pages.</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 + 雨水积累模拟</title>
+    <style>
+        /* 原有样式保留，新增模拟功能所需样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background-color: #f5f5f5;
+        }
+        /* 原有内容样式微调，保持一致性 */
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #555;
+            text-align: center;
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 50%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+        audio {
+            display: block;
+            margin: 2rem auto;
+            width: 50%;
+            max-width: 400px;
+        }
+        /* 雨水模拟模块样式 */
+        .simulation-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 3rem auto;
+            max-width: 1000px;
+        }
+        .simulation-container h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .info {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: #555;
+            text-align: center;
+        }
+        .value-group {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .value-card {
+            background: #e8f4f8;
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            min-width: 200px;
+            text-align: center;
+        }
+        .value-card h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .value-card p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2b6cb0;
+            margin: 0;
+        }
+        .grid-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            min-height: 200px;
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 6px;
+            margin: 1.5rem auto;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .block {
+            width: 30px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            position: relative;
+        }
+        .block-ground {
+            background-color: #2d3748; /* 地形颜色 */
+        }
+        .block-water {
+            background-color: #4299e1; /* 雨水颜色 */
+            opacity: 0.8;
+        }
+        .block-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .btn-refresh {
+            display: block;
+            margin: 0 auto;
+            padding: 0.8rem 1.5rem;
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-refresh:hover {
+            background-color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <!-- 原有个人主页内容 -->
+    <h1>Hello World</h1>
+    <p>I'm LhopitalKuma</p>
+    <img src="my-photo.jpg" alt="我的本地图片" style="width: 50%; margin-top: 20px; border-radius: 8px;">
+    <p>I'm hosted with GitHub Pages.</p>
 
+    <audio controls>
+        <source src="https://github.com/lhopitalkuma/lhopitalkuma.github.io/raw/refs/heads/main/lightdance.mp3" type="audio/mpeg">
+   </audio>
+
+    <!-- 新增雨水积累模拟模块 -->
+    <div class="simulation-container">
+        <h2>雨水积累模拟</h2>
+        
+        <div class="info">
+            随机生成地形高度数组，蓝色部分为可积累的雨水，黑色部分为地形
+        </div>
+
+        <div class="value-group">
+            <div class="value-card">
+                <h3>地形高度数组</h3>
+                <p id="height-array">[...]</p>
+            </div>
+            <div class="value-card">
+                <h3>可积累雨水总量</h3>
+                <p id="water-total">0</p>
+            </div>
+            <div class="value-card">
+                <h3>地形宽度（柱子数）</h3>
+                <p id="terrain-width">0</p>
+            </div>
+        </div>
+
+        <div class="grid-container" id="grid"></div>
+
+        <button class="btn-refresh" id="refresh-btn">重新生成地形</button>
+    </div>
+
+    <!-- 雨水模拟核心脚本 -->
+    <script>
+        // 生成随机地形高度数组
+        function generateRandomTerrain() {
+            const length = Math.floor(Math.random() * 9) + 1;
+            return Array.from({ length }, () => Math.floor(Math.random() * 10));
+        }
+
+        // 计算可积累雨水总量
+        function calculateTrappedWater(height) {
+            if (height.length <= 2) return 0;
+            let totalWater = 0;
+            const n = height.length;
+            const leftMax = new Array(n).fill(0);
+            const rightMax = new Array(n).fill(0);
+
+            leftMax[0] = height[0];
+            for (let i = 1; i < n; i++) {
+                leftMax[i] = Math.max(leftMax[i - 1], height[i]);
+            }
+
+            rightMax[n - 1] = height[n - 1];
+            for (let i = n - 2; i >= 0; i--) {
+                rightMax[i] = Math.max(rightMax[i + 1], height[i]);
+            }
+
+            for (let i = 0; i < n; i++) {
+                totalWater += Math.max(0, Math.min(leftMax[i], rightMax[i]) - height[i]);
+            }
+
+            return totalWater;
+        }
+
+        // 生成地形和雨水矩阵
+        function generateTerrainMatrix(height) {
+            const maxHeight = Math.max(...height, 1);
+            const width = height.length;
+            const matrix = [];
+
+            for (let row = 0; row < maxHeight; row++) {
+                matrix.push(Array(width).fill('empty'));
+            }
+
+            for (let col = 0; col < width; col++) {
+                const colHeight = height[col];
+                for (let row = 0; row < colHeight; row++) {
+                    const matrixRow = maxHeight - 1 - row;
+                    matrix[matrixRow][col] = 'ground';
+                }
+            }
+
+            if (width >= 3) {
+                const leftMax = new Array(width).fill(0);
+                const rightMax = new Array(width).fill(0);
+
+                leftMax[0] = height[0];
+                for (let i = 1; i < width; i++) {
+                    leftMax[i] = Math.max(leftMax[i - 1], height[i]);
+                }
+
+                rightMax[width - 1] = height[width - 1];
+                for (let i = width - 2; i >= 0; i--) {
+                    rightMax[i] = Math.max(rightMax[i + 1], height[i]);
+                }
+
+                for (let col = 0; col < width; col++) {
+                    const waterLevel = Math.min(leftMax[col], rightMax[col]);
+                    for (let row = height[col]; row < waterLevel; row++) {
+                        const matrixRow = maxHeight - 1 - row;
+                        matrix[matrixRow][col] = 'water';
+                    }
+                }
+            }
+
+            return matrix;
+        }
+
+        // 渲染地形和数据
+        function renderTerrain() {
+            const terrain = generateRandomTerrain();
+            const trappedWater = calculateTrappedWater(terrain);
+            const terrainMatrix = generateTerrainMatrix(terrain);
+            const gridContainer = document.getElementById('grid');
+
+            gridContainer.innerHTML = '';
+
+            document.getElementById('height-array').textContent = `[${terrain.join(', ')}]`;
+            document.getElementById('water-total').textContent = trappedWater;
+            document.getElementById('terrain-width').textContent = terrain.length;
+
+            terrain.forEach((height, colIndex) => {
+                const columnDiv = document.createElement('div');
+                columnDiv.style.display = 'flex';
+                columnDiv.style.flexDirection = 'column';
+                columnDiv.style.alignItems = 'center';
+
+                for (let row = 0; row < terrainMatrix.length; row++) {
+                    const blockType = terrainMatrix[row][colIndex];
+                    if (blockType !== 'empty') {
+                        const blockDiv = document.createElement('div');
+                        blockDiv.className = `block block-${blockType}`;
+                        blockDiv.style.height = '30px';
+                        columnDiv.appendChild(blockDiv);
+                    }
+                }
+
+                const labelDiv = document.createElement('div');
+                labelDiv.className = 'block-label';
+                labelDiv.textContent = height;
+                columnDiv.appendChild(labelDiv);
+
+                gridContainer.appendChild(columnDiv);
+            });
+        }
+
+        // 页面加载自动运行，点击按钮刷新
+        window.onload = renderTerrain;
+        document.getElementById('refresh-btn').addEventListener('click', renderTerrain);
+    </script>
+</body>
+</html>
 <audio controls>
   <!-- 替换为你的音乐 URL -->
   <source src="https://github.com/lhopitalkuma/lhopitalkuma.github.io/raw/refs/heads/main/lightdance.mp3" type="audio/mpeg">
@@ -14,6 +313,7 @@
 
 </body>
 </html>
+
 
 
 
