@@ -30,11 +30,17 @@
             font-family: 'Arial', sans-serif;
         }
         body {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            background-color: #f5f5f5;
-        }
+    	max-width: 1200px;
+    	margin: 2rem auto;
+    	padding: 0 1rem;
+    	background-color: lightblue; /* 备用色：图片加载失败时显示 */
+    	/* 核心：设置背景图片（替换成你的图片链接/路径） */
+    	background-image: url("bg_img.jpg"); /* 示例：风景图，可替换 */
+    	background-size: cover; /* 图片铺满整个屏幕（保持比例，可能裁剪边缘） */
+    	background-repeat: no-repeat; /* 图片不重复显示 */
+    	background-attachment: fixed; /* 滚动页面时，背景图片固定不动 */
+    	background-position: center; /* 图片居中显示 */
+	}
         h1 {
             color: #333;
             text-align: center;
