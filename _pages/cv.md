@@ -15,7 +15,7 @@ Education
 * M.S. in Jekyll, GitHub University, 2014
 * B.S. in GitHub, GitHub University, 2012-->
 * Undergraduate Studying in GTIIT, 2024--
-* H.S. in Linchuan No.1 High School, 2024
+* H.S. in Linchuan No.1 High School, 2021-2024
 
 
 Work experience

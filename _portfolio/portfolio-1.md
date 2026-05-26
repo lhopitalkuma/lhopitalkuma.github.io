@@ -1,7 +1,21 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Chinese Chess Game (Python)"
+excerpt: "Using Python to animate Chinese chess game notation."
+order: 1
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+<video width="100%" height="auto" controls style="max-width:600px;">
+  <source src="/files/portfolio/Chinese_chess_py.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+This is a Python-based Chinese Chess game implementation. The video above demonstrates the gameplay and features.
+
+## Features
+
+- Interactive board interface
+- Move validation and rules enforcement
+- Game state management
+- Support for standard Chinese Chess rules
+
