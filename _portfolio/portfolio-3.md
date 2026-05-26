@@ -15,15 +15,16 @@ collection: portfolio
 </div>
 
 <!-- 本地大视频已注释，使用 B 站 iframe 占位以便本地构建预览 -->
-<!--
+
 <video width="100%" height="auto" controls style="max-width:800px; margin-top:1rem;">
-  <source src="/files/portfolio/Gwyn%20lord%20of%20cinder.mp4" type="video/mp4">
+  <source src="/files/portfolio/Gwyn Lord of Cinder 720p.mp4" type="video/mp4">
   您的浏览器不支持 video 标签。
 </video>
--->
 
-<!-- 占位 B 站播放器：已替换为你提供的 BV 链接 -->
+
+<!-- 占位 B 站播放器：已替换为你提供的 BV 链接 
 <iframe src="https://player.bilibili.com/player.html?bvid=BV18XSjBREqF&page=2" width="100%" height="450" frameborder="0" scrolling="no" allowfullscreen style="max-width:800px; margin-top:1rem;"></iframe>
+-->
 
 这是我使用 LilyPond（一个类似 LaTeX 的文本乐谱排版语言）和 Frescobaldi 编辑器完成的作品。整个过程花了我 8 小时：学习语法、调试编译错误、不断迭代修改，最终导出高质量的 PDF 乐谱与可播放的 MIDI 文件。
 
