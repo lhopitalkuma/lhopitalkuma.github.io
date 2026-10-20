@@ -1,0 +1,78 @@
+{
+  "talks": [
+    {
+      "title": "White collar? Blue collar! Engineers are not Enjoyers!",
+      "date": "2026-05-19",
+      "summary": "从工程师的梗图出发，聊聊 STEM 里的幽默，以及 Charaudeau 的分析视角。",
+      "label": "GENERAL EDUCATION / PDF",
+      "href": "assets/talks/2026-05-19-talk-3.pdf"
+    },
+    {
+      "title": "Undergrad-student’s dilemma and self-acceptance",
+      "date": "2026-03-29",
+      "summary": "读《四叠半神话大系》之后，谈大学生活的期待、遗憾，以及如何与自己相处。",
+      "label": "READING SHARING / PDF",
+      "href": "assets/talks/2026-03-29-talk-2.pdf"
+    },
+    {
+      "title": "Cultural Elements Decorated in Video Games",
+      "date": "2024-09-21",
+      "summary": "一次英语课堂分享：从电子游戏里，看看那些值得停下来细看的文化元素。",
+      "label": "CULTURE & GAMES / PDF",
+      "href": "assets/talks/2024-09-21-talk-1.pdf"
+    }
+  ],
+  "blog": [
+    {
+      "id": "bfa83574-34c6-48e0-8e72-13afe4b18996",
+      "title": "EN-Ver",
+      "summary": "26.10.20 test",
+      "category": "blog",
+      "date": "2026-10-20",
+      "markdown": "## Prologue\n\n> It is recorded that the first person who dared slander life as a monotone mechanical cycle was convicted of the dual sins of blasphemy and hubris, then cast into the Camino Crater.\n> In the beginning, there were no gears, nor bearings. No one compared life to a machine; faith in the Great Creator remained unshaken, and belief in technological forces—chief among them machinery—had yet to be born.\n> When humans ate raw meat and drank blood, they worshiped animal totems; when they slept by night and rose with the dawn, they worshiped the sun, moon, and stars; when they tilled the earth and harvested its yield, they worshiped the four seasons and the five grains.\n> There was also a classical age when people prayed to a multitude of gods at once. Perhaps it was during that era that pastoral idylls still echoed across the lands, and wandering bards roamed the four corners of the world.\n> Yet, no matter how devoutly or humbly those people of old offered sacrifices and prayers, desperately pleading for divine mercy, all they received in return was the unrelenting cycle of crop failures, plagues, and natural disasters. Powerless to resist, those pitiable souls remained forever bound to the soil.\n> Until now. Armed with flesh, blood, and intellect, humanity has forged creations of iron and steel, finally gaining the power to defy nature. The roar of massive machinery and the billowing clouds of black smoke stand as an unfeeling satire of the old gods' indifference. And so, an unstoppable torrent of steel marches against the natural world, forging the glory of a new era for mankind.\n> Yet, even as humans wring vastly more resources from nature than ever before, abundance alone cannot put an end to human strife. Land, minerals, knowledge, technology—anything under the sun can be honed into a blade. Meanwhile, the Church wanes, the Academies fracture into rival sects, and secular powers clash endlessly. Universities and workshops spring up like mushrooms after rain, proclaiming the end of the Dark Ages—yet the machinery of war has never ceased its grind.\n> Even if the gears of fate never turn along a predetermined path, the conflicts of the mortal realm will eventually find their reckoning within the rhythm of daily life. No matter how grand the world may be, it is ultimately nothing more than a backdrop for the life of each individual. We ought to believe, as we must believe: humanity is autonomous, not mechanical.\n> — *Excerpt from \"Mechanistic Determinism\"*\n\n## Chapter 1\n\nBeursin stood on the rooftop, feet set wide in a straight line, hands cradling the back of his head as he leaned slightly backward to maintain a delicate balance.\n\n“Ahh, I’d love to go into free fall right now... feeling the wind brush past while diving straight into the earth's embrace—”\n\nFacing the sky, which was scorched crimson by the setting sun, he couldn't help letting out a thoroughly listless groan.\n\nIn truth, jumping down from what was technically the flat roof of a storage shed to land on soft earth would be a process far too brief to deserve the title of \"free fall.\" Not to mention that far from letting him feel the wind, it would yield nothing but a hazard to his life and a public display of embarrassment.\n\nStill, no sound of wind reached his ears; instead, he caught what seemed like faint metallic clinking and the bubbling rumble of liquid brought to a boil—though thankfully, no thunderous blasts.\n\n⚪\n\nBeneath the feet of Beursin lay an abandoned academy warehouse, hiding a secret workshop in its basement known to very few. Yet unlike ancient ruins, this secret held no gold, silver, or legendary blueprints. In fact, it remained a secret purely because everyone had forgotten about it. The workshop contained nothing but dust—swirling dust, suffocating dust—and a handful of dust-covered academy students.\n\nAnd among these dusty students, Beursin was undeniably the dustiest. As the head of the so-called \"Research Group for Cross-Applications of Machinery and Runes,\" his authority hardly matched his accountability; he possessed an immense capacity to take the blame alongside an utterly dismal power to allocate resources. From top to bottom, he had worn himself ragged worrying over this workshop.\n\nSuddenly, a loud rumble shook the building, nearly knocking him off his precarious perch.\n\n“Looks like another cylinder blow-out...”\n\nClimbing down from the flat roof, Beursin surveyed the disorganized piles of raw materials cluttering the warehouse and let out a sigh. He then made his way toward a shadowed corner. Hemmed in by scrap metal lay an easily overlooked trapdoor; stepping down its staircase led directly into the subterranean workshop. While little noise made it up to the warehouse, the deeper he descended, the more the workshop's racket drowned out even the heaviest of footsteps.\n\nBeursin slowly pushed open the workshop door, only to be greeted by a wall of smoke and steam. He cast his gaze toward the cluttered workbench and caught the eyes of Vera Falen, who looked up briefly to glance back at him. A few new streaks of soot marred her normally expressionless face, though they did little to obscure her striking features. Vera Falen had always been a cold-faced, sharp-tongued aristocratic lady, yet she harbored an intense passion for alchemy and reaction kettles. For her to be standing there in complete silence was proof enough that the situation was far too dire for casual chatter.\n\n“Vera, so... how bad is it? Did the cylinder really blow again?”\n\n“Precisely.”\n\n“Ah—let me take a look at what happened then.”\n\nVera lowered her head again, organizing the scattered equipment on the table. Beursin walked up to the bench and carefully examined the engine block, whose exterior had turned scorched black. Hairline cracks had already spiderwebbed across both the cylinder and the piston; even if repaired, they would undoubtedly split again next time. Running his fingers over the iron components, he was surprised to feel the sheer wear and tear etched into the metal. Beursin realized that their current technological approach might be a dead end.\n\nAfter a moment of silent reflection, he resolved himself. “Vera, I think we might need a major overhaul of the design.”\n\n“Agreed. Its structural strength simply cannot withstand the pressure right now.”\n\n“But if we reduce the pressure, the power output won’t be enough.”\n\n“How about experimenting with a scaled-down model? The intensity of any explosive failure would drop to an acceptable range.”\n\n“True, but a miniature model demands extremely high machining precision. Buying precision components would only add insult to injury for this workshop's financial situation...”\n\n“...”\n\nSilence fell between them.\n\n“Let’s leave it for now and call it a day. I’ll think on it some more. Thanks for your hard work,” Beursin said at last.\n\nVera gave a nod, packed her bag, pushed open the door, and departed. Listening to her fading footsteps, Beursin pushed a few chairs together in the workshop and collapsed onto them limply. Whenever things hit a wall and left him utterly exhausted, he would just find a hard spot to lie down. It was an old habit of his. In the past, he used to lie directly on the cold floor, but after getting lectured a few times by Musya—who couldn't stand the sight of it—he settled for this makeshift bed of joined chairs.\n\n",
+      "published": true,
+      "updatedAt": "2026-10-20T08:41:41.311Z",
+      "label": "BLOG / 随笔"
+    },
+    {
+      "title": "Blog Post number 1",
+      "date": "2026-05-23",
+      "summary": "原站的第一条博客测试记录。",
+      "label": "BLOG / TESTS",
+      "body": [
+        {
+          "type": "p",
+          "text": "This is the first test at 2026.05.23"
+        },
+        {
+          "type": "h2",
+          "text": "first sentence"
+        },
+        {
+          "type": "h3",
+          "text": "second sentence"
+        },
+        {
+          "type": "h3",
+          "text": "third sentence"
+        }
+      ]
+    }
+  ],
+  "fiction": [
+    {
+      "id": "4bb639d7-ecc1-4c2d-a6f7-2e07fc0ddfbc",
+      "title": "Opening",
+      "summary": "",
+      "category": "fiction",
+      "date": "2026-10-20",
+      "markdown": "Prologue\n\n据记载，首位将生活妄称为单调的机械循环之人，被判决为渎神与傲慢的双重罪名，投入卡米诺火山口之中。\n\n \n\n起初，世界上并没有齿轮与轴承，不会有人把生活比作机械，对创世神的信仰不会动摇，更不会有对以机械为首的技术力量的信仰。\n\n \n\n茹毛饮血时，人们信仰动物图腾；夜伏昼出时，人们信仰日月星辰；耕作采摘时，人们信仰四季五谷。\n\n \n\n也有同时信仰众多神明的古典时代。或许就是那时候还流传着田园牧歌，存在着遍布四方的吟游诗人吧。\n\n \n\n然而，曾经的人们献上供品与祈祷，带着虔诚与卑微，苦苦恳求着神的垂怜；换来的是不变的歉收，瘟疫，与天灾。无力对抗的可怜的人们，就此被拘限在大地上。\n\n \n\n直到如今，凭借着血肉与智慧创造的钢铁造物，人类终于得到了对抗自然的能力。轰鸣作响的大型机器与滚滚冒出的黑烟，无情地讽刺着旧神的漠然。于是，钢铁的洪流浩浩荡荡向自然进军，将为人类铸造新时代的荣光。\n\n \n\n然而，即便能够向自然夺取远超以往的资源，人类的纷争却不会因富足而就此断绝。土地、矿产、知识、技术，世间万物皆可致兵刃。与此同时，教会衰微，学会派系林立，世俗政权互相争斗。大学与工坊如雨后春笋般建立起来，宣告蒙昧时代即将结束，但战争机器从未停转。\n\n \n\n就算命运的齿轮向来不按既定的轨迹运行，人间的是非也终会在生活中迎来定论。无论多么宏大的世界，也不过是每个人生命的背景板罢了。我们应该认为，我们也必须相信，人是自主的，而非机械的。\n\n——选自《驳机械决定论》",
+      "published": true,
+      "novelTitle": "魔导玛星纳",
+      "volume": "第一卷",
+      "chapterNumber": 1,
+      "updatedAt": "2026-10-20T09:01:56.175Z",
+      "label": "FICTION / 小说"
+    }
+  ]
+}
