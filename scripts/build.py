@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def parse(path,category):
     text=path.read_text(encoding='utf-8-sig').replace('\r\n','\n')
-    if not text.startswith('---\n'):raise ValueError(f'{path}: 缺少文件头，请参考示例或使用 Markdown 编辑器导出')
+    if not text.startswith('---\n'):raise ValueError(f'{path}: 缺少文件头，请参考 README.md 中的元信息示例')
     parts=text.split('\n---\n',1)
     if len(parts)!=2:raise ValueError(f'{path}: 文件头缺少结束分隔线')
     meta={}

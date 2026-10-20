@@ -28,19 +28,9 @@ git push -u origin master
 
 ## 以后如何发博客、上传小说
 
-### 方式一：使用网页 Markdown 编辑器
+在 GitHub 仓库中新增或上传 Markdown 文件：博客放入 `content/blog/`，小说章节放入 `content/fiction/`。提交到 `master` 后，GitHub Actions 会自动更新人文板块。也可以在本地编写后通过 Git 推送。
 
-1. 打开新网站页脚的 **Markdown 编辑器**。
-2. 选择博客或小说。小说填写书名、可选卷名、章节序号和章节标题。
-3. 写正文或导入 `.md`，预览后点击 **下载待发布 Markdown**。
-4. 将下载文件上传到 GitHub 仓库的 `content/blog/` 或 `content/fiction/`，然后提交。
-5. Actions 成功后，文章会显示在人文对应分类中。相同书名归为同一部小说，章节按序号排序。
-
-编辑既有导出的文章时，覆盖原来的同名文件，保留 `id`。新建章节请点击“新建文章 / 章节”，每章一个文件。
-
-注意：原来的无 ID 示例博客保存在 `site/writing-base.json`，如需修改该示例，请直接修改这个文件；把它作为新 Markdown 导出会新增一篇文章。
-
-### 方式二：直接上传 Markdown
+修改已有文章时覆盖原来的同名文件，并保留已有 `id`；新文章或新章节请使用新文件。原来的示例博客保存在 `site/writing-base.json`，可直接修改该文件。
 
 在文档开头添加元信息。这里只用简单的 `字段: 值` 格式，字符串推荐双引号，不支持复杂 YAML。正文支持现有安全 Markdown 子集：标题、段落、列表、引用、强调、代码与链接；HTML 不执行，暂不支持图片语法和复杂表格。
 
@@ -104,6 +94,6 @@ python -m http.server 8000 --directory _site
 
 ## 与原 Sites 的区别
 
-GitHub Pages 只托管静态内容。这个包没有 Sites 的身份验证、云端数据库、站主登录或直接写入接口。编辑器提供 Markdown 导入、预览和下载；真正发布通过 GitHub 提交完成。包中不含任何凭据、访问令牌或服务器私钥。
+GitHub Pages 只托管静态内容。这个包没有 Sites 的身份验证、云端数据库、站主登录或直接写入接口。网站仅提供阅读功能；博客和小说通过提交仓库中的 Markdown 文件发布。包中不含任何凭据、访问令牌或服务器私钥。
 
 本仓库通过 `.github/workflows/pages.yml` 在推送到 `master` 时自动构建并部署至 GitHub Pages，也可在 Actions 中手动运行。原 Sites 网站独立保留。
