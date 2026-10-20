@@ -1,101 +1,109 @@
-# Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+# Ruzhuo Xiong · Mechanical Playground — GitHub Pages 版
 
-![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
+这是可独立部署的 GitHub Pages 静态版本。保留现有页面、机械动画、明暗主题、图片、视频、演讲 PDF，以及导出时已发布的 2 篇博客和 1 个小说章节。页面使用相对路径，兼容个人主页和仓库子路径。
 
-# Getting Started
+## 推荐：GitHub Actions 自动部署
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your public repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Edit site-wide configuration in `_config.yml` and double check that the `url` is the one that you just selected in the previous step and that `repository` reflects the correct path for your repository.
-1. Add your site content, upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+1. 在 GitHub 创建仓库。个人主页仓库名称必须是 `你的用户名.github.io`；普通仓库也可以，网址会多一段仓库名。
+2. 将本压缩包解压后的全部内容上传到仓库根目录，包括 `.github/workflows/pages.yml`。不要只上传 ZIP，也不要在外面再套一层目录。
+3. 默认分支使用 `master`。进入仓库 **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**。
+4. 提交后查看 **Actions → Deploy Mechanical Playground**。成功后在 Settings → Pages 查看实际网址。必要时在 Actions 中手动点 **Run workflow**。
 
-See more info at https://academicpages.github.io/
+本方案不需要 npm、访问令牌或额外付费服务。Actions 用 Python 标准库生成文章列表后部署 `_site`。GitHub Pages 的具体可用性取决于仓库可见性及你的 GitHub 套餐。
 
-### Additional Tutorials
+### 使用本地 Git 上传
 
-Additional tutorials for working with the Academic Pages template can be found at the following sites:
-- https://jayrobwilliams.com/posts/2020/06/academic-website/
-
-## Running locally
-
-When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-
-### Using a different IDE
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distributions and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    If you see error `Unable to locate package ruby-bundler`, `Unable to locate package nodejs `, run the following:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-    then try running `sudo apt install ruby-dev ruby-bundler nodejs` again.
-
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-
-    If you see file permission error like `Fetching bundler-2.6.3.gem ERROR:  While executing gem (Gem::FilePermissionError) You don't have write permissions for the /var/lib/gems/3.2.0 directory.` or `Bundler::PermissionError: There was an error while trying to write to /usr/local/bin.`
-    Install Gems Locally (Recommended):
-    ```bash
-    bundle config set --local path 'vendor/bundle'
-    ```
-    then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and `.bundle`.
-
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change to Markdown (*.md) and HTML files, while changes to the core template and configuration (i.e., `_config.yml`) will require stopping and restarting Jekyll.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-You can build and execute the container by running the following command in the repository:
+确保在解压后的目录中打开终端，将下面地址改成自己的新仓库地址：
 
 ```bash
-chmod -R 777 .
-docker compose up
+git init
+git add .
+git commit -m "Import Mechanical Playground for GitHub Pages"
+git branch -M master
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
+git push -u origin master
 ```
 
-You should now be able to access the website from `localhost:4000`.
+已有个人主页仓库时，先备份原站，在其检出目录中合并这些文件并提交。不要直接对已有仓库执行上述新仓库命令。
 
-### Using the DevContainer in VS Code
+## 以后如何发博客、上传小说
 
-If you are using [Visual Studio Code](https://code.visualstudio.com/) you can use the [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) that comes with this Repository. Normally VS Code detects that a development container configuration is available and asks you if you want to use the container. If this doesn't happen you can manually start the container by **F1->DevContainer: Reopen in Container**. This restarts your VS Code in the container and automatically hosts your academic page locally on http://localhost:4000. All changes will be updated live to that page after a few seconds.
+### 方式一：使用网页 Markdown 编辑器
 
-# Maintenance
+1. 打开新网站页脚的 **Markdown 编辑器**。
+2. 选择博客或小说。小说填写书名、可选卷名、章节序号和章节标题。
+3. 写正文或导入 `.md`，预览后点击 **下载待发布 Markdown**。
+4. 将下载文件上传到 GitHub 仓库的 `content/blog/` 或 `content/fiction/`，然后提交。
+5. Actions 成功后，文章会显示在人文对应分类中。相同书名归为同一部小说，章节按序号排序。
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+编辑既有导出的文章时，覆盖原来的同名文件，保留 `id`。新建章节请点击“新建文章 / 章节”，每章一个文件。
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii), and additional maintainers would be welcome.
+注意：原来的无 ID 示例博客保存在 `site/writing-base.json`，如需修改该示例，请直接修改这个文件；把它作为新 Markdown 导出会新增一篇文章。
 
-## Bugfixes and enhancements
+### 方式二：直接上传 Markdown
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of the template to your fork as well.
+在文档开头添加元信息。这里只用简单的 `字段: 值` 格式，字符串推荐双引号，不支持复杂 YAML。正文支持现有安全 Markdown 子集：标题、段落、列表、引用、强调、代码与链接；HTML 不执行，暂不支持图片语法和复杂表格。
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize, although [rebasing](https://git-scm.com/docs/git-rebase) the changes from this template will work along with manually [cherry picking](https://git-scm.com/docs/git-cherry-pick) the relevant commits. If you are not comfortable with the Git command line, you can save your various `.yml` configuration files and Markdown files, delete the repository, and fork it again. 
+博客示例：
 
+```markdown
 ---
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+title: "我的新随笔"
+date: "2026-10-20"
+summary: "一句简介"
+published: true
+---
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+# 我的新随笔
+
+正文从这里开始。
+```
+
+小说章节示例：
+
+```markdown
+---
+title: "序章：工作台旁"
+date: "2026-10-20"
+summary: "故事的开始"
+novelTitle: "魔导玛星纳"
+volume: "第一卷"
+chapterNumber: 1
+published: true
+---
+
+# 序章：工作台旁
+
+正文从这里开始。
+```
+
+新文档可以省略 `id`，构建会依据路径生成。`published: false` 不进入公开文章列表；但公开 GitHub 仓库中的草稿源文件仍然公开，不要把私密草稿提交到公开仓库。未发布的原 Sites 云端草稿未包含在此包中，需要先从原后台另行保存。
+
+## 本地查看
+
+安装 Python 3 后，在本目录运行：
+
+```bash
+python scripts/build.py
+python -m http.server 8000 --directory _site
+```
+
+浏览器打开 `http://localhost:8000/`。不要直接双击 HTML，浏览器可能阻止读取文章 JSON。
+
+## 最简单的手动静态部署方式
+
+如果只想先恢复主页，不想配置 Actions，可仅把 `site/` **里面的文件**放入仓库根目录，然后在 Settings → Pages 选择 **Deploy from a branch → master → / (root)**。这个目录已附带当前完整 `writing.json`，能立即阅读。使用此方式后，新增 Markdown 不会自动进入列表；需要在本地运行构建，再用 `_site/` 内的文件替换部署内容。
+
+## 结构
+
+- `site/`：所有页面、脚本、样式和媒体；`writing-base.json` 保存原有演讲和示例文章。
+- `content/blog/`、`content/fiction/`：此次导出的已发表 Markdown，后续新增文件也放这里。
+- `scripts/build.py`：生成文章列表和 `_site/`。
+- `.github/workflows/pages.yml`：提交后自动构建与部署。
+- `DEPLOYMENT-SOURCES.md`：部署方式对应的官方文档。
+
+## 与原 Sites 的区别
+
+GitHub Pages 只托管静态内容。这个包没有 Sites 的身份验证、云端数据库、站主登录或直接写入接口。编辑器提供 Markdown 导入、预览和下载；真正发布通过 GitHub 提交完成。包中不含任何凭据、访问令牌或服务器私钥。
+
+本仓库通过 `.github/workflows/pages.yml` 在推送到 `master` 时自动构建并部署至 GitHub Pages，也可在 Actions 中手动运行。原 Sites 网站独立保留。

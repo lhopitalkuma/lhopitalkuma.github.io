@@ -1,0 +1,52 @@
+{
+  "talks": [
+    {
+      "title": "White collar? Blue collar! Engineers are not Enjoyers!",
+      "date": "2026-05-19",
+      "summary": "从工程师的梗图出发，聊聊 STEM 里的幽默，以及 Charaudeau 的分析视角。",
+      "label": "GENERAL EDUCATION / PDF",
+      "href": "assets/talks/2026-05-19-talk-3.pdf"
+    },
+    {
+      "title": "Undergrad-student’s dilemma and self-acceptance",
+      "date": "2026-03-29",
+      "summary": "读《四叠半神话大系》之后，谈大学生活的期待、遗憾，以及如何与自己相处。",
+      "label": "READING SHARING / PDF",
+      "href": "assets/talks/2026-03-29-talk-2.pdf"
+    },
+    {
+      "title": "Cultural Elements Decorated in Video Games",
+      "date": "2024-09-21",
+      "summary": "一次英语课堂分享：从电子游戏里，看看那些值得停下来细看的文化元素。",
+      "label": "CULTURE & GAMES / PDF",
+      "href": "assets/talks/2024-09-21-talk-1.pdf"
+    }
+  ],
+  "blog": [
+    {
+      "title": "Blog Post number 1",
+      "date": "2026-05-23",
+      "summary": "原站的第一条博客测试记录。",
+      "label": "BLOG / TESTS",
+      "body": [
+        {
+          "type": "p",
+          "text": "This is the first test at 2026.05.23"
+        },
+        {
+          "type": "h2",
+          "text": "first sentence"
+        },
+        {
+          "type": "h3",
+          "text": "second sentence"
+        },
+        {
+          "type": "h3",
+          "text": "third sentence"
+        }
+      ]
+    }
+  ],
+  "fiction": []
+}
